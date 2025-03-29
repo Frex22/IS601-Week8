@@ -1,0 +1,14 @@
+#write a simple docker-compose.yml file to run a simple web server
+version: '3.8'
+services:
+  qrcode:
+    image: qrcode:1.0
+    environment:
+      - QR_CODE_DIR=/app/qr_codes
+      - FILL_COLOR=black
+      - BACK_COLOR=white
+    volumes:
+      - ./qr_codes:/app/qr_codes
+    command: --url https://github.com/Frex22/IS601-Week7
+
+
